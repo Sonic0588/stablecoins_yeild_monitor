@@ -1,0 +1,34 @@
+[project]
+name = "stablecoins-yield-monitor"
+version = "0.1.0"
+description = "Hourly stablecoin yield monitoring with Telegram reporting"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.9.0",
+    "APScheduler>=3.10.4",
+    "python-telegram-bot>=21.0",
+    "pandas>=2.1.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+ignore_missing_imports = true

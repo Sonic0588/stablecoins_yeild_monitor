@@ -1,0 +1,26 @@
+# Stablecoins Yield Monitor - Cursor Rules
+
+## Project Context
+This is an async Python application that monitors stablecoin yields hourly.
+- Uses APScheduler for scheduling
+- Collects data from DefiLlama API and individual protocol APIs
+- Stores historical data in CSV files
+- Sends reports via Telegram bot
+
+## Code Style
+- Use async/await for all I/O operations
+- Type hints are mandatory (Pydantic models preferred)
+- Follow PEP 8, max line length 100
+- Use f-strings for formatting
+
+## Architecture Patterns
+- Collectors inherit from BaseCollector in src/collectors/base.py
+- All data models are Pydantic models in src/models/
+- Configuration via pydantic-settings from environment
+
+## Key Dependencies
+- aiohttp for HTTP requests
+- APScheduler for scheduling
+- python-telegram-bot for Telegram
+- pandas for CSV operations
+
